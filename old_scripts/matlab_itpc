@@ -1,0 +1,14 @@
+% ITPC Snippet
+​
+n_k = 5     % number of buffer entries k to aggregate 
+n_chan = 5  % number of channels 
+n_freq = 64 % num frequencies
+​
+for k = 1:n_k % for each entry k in the buffer
+    for c = 1:n_chan % for each channel
+        for f = 1:n_freq % for each frequency
+            ITPC{k,c,f) = (sqrt(sum(cos(angle(FourierSpectrum(k,c,f)))))^2+...
+                (sum(sin(angle(FourierSpectrum(k,c,f))))^2)))/n_k);
+        end 
+    end 
+end
